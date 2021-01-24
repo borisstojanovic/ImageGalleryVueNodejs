@@ -47,21 +47,18 @@ class CommentsService {
         })
     }
 
-    update_comment(id, formData){
-        return axios.put(API_URL + 'edit/' + id, formData, {withCredentials: true}).then( response => {
+    update_comment(id, comment){
+        return axios.put(API_URL + 'edit/' + id, {
+            user_id: comment.user_id,
+            image_id: comment.image_id,
+            content: comment.content
+        }, {withCredentials: true}).then( response => {
             return response
         }).catch( err => {
             return err
         })
     }
 
-    edit_comment(id, formData){
-        return axios.put(API_URL + 'edit/' + id, formData, {withCredentials: true}).then( response => {
-            return response
-        }).catch( err => {
-            return err
-        })
-    }
 }
 
 export default new CommentsService();

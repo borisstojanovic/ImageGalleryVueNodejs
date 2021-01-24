@@ -65,7 +65,6 @@ route.get('/comment/:id', (req, res) => {
 
 //sluzi samo da se promeni content
 route.put('/edit/:id', authMiddleware, (req, res) => {
-
     if(req.body === undefined){
         res.status(400).send(new Error('Body empty error').sqlMessage);
     } else {
@@ -73,8 +72,9 @@ route.put('/edit/:id', authMiddleware, (req, res) => {
             return res.status(401).send(new Error('Unauthorized edit').sqlMessage);
         }
         let {error} = Joi.validate(req.body, scheme);
-        if (error)
+        if (error) {
             res.status(400).send(error.details[0].message);
+        }
         else {
             let query = "update comment set content=? where id=?";
             let formated = mysql.format(query, [req.body.content, req.params.id]);
@@ -85,7 +85,6 @@ route.put('/edit/:id', authMiddleware, (req, res) => {
                 else {
                     query = 'select * from comment where id=?';
                     formated = mysql.format(query, [req.params.id]);
-
                     pool.query(formated, (err, rows) => {
                         if (err)
                             res.status(500).send(err.sqlMessage);

@@ -59,21 +59,28 @@ export const comments = {
                 return Promise.resolve(id);
             }).catch( err => {return Promise.reject(err);});
         },
-        add_comment: async function ({ commit }, comment){
-            await CommentsService.add_comment(comment).then(comment => {
-                commit('add_comment', comment);
-                return Promise.resolve(comment);
-            }).catch( err => {return Promise.reject(err);});
+        add_comment: function ({ commit }, comment){
+            return new Promise((resolve, reject) => {
+                CommentsService.add_comment(comment).then(comment => {
+                    commit('add_comment', comment);
+                    resolve(comment);
+                }).catch( err => {
+                    reject(err);
+                });
+            })
+
         },
-        update_comment: async function ({ commit }, payload){
-            let formData = new FormData();
-            formData.append('user_id', payload.user_id);
-            formData.append('content', payload.content);
-            formData.append('image_id', payload.image_id);
-            await CommentsService.update_comment(payload.id, formData).then(response => {
-                commit('update_comment', {id: payload.id, user_id: response.data.user_id,
-                    content: response.data.content, image_id: response.data.image_id})
-            }).catch(err => alert(err));
+        update_comment: function ({ commit }, payload){
+            return new Promise((resolve, reject) => {
+                CommentsService.update_comment(payload.id,
+                    {user_id: payload.user_id, image_id: payload.image_id, content: payload.content}).then(response => {
+                    commit('update_comment', {id: payload.id, user_id: response.data.user_id,
+                        content: response.data.content, image_id: response.data.image_id});
+                    resolve(response)
+                }).catch(err => {
+                    reject(err);
+                });
+            })
         },
 
         clear_comments: function ({ commit }){

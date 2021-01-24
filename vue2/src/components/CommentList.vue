@@ -1,9 +1,16 @@
 <template>
     <div>
-        <b-list-group v-for="comment in currentComments" :key="comment.id">
+        <b-list-group>
+            <div v-for="comment in currentComments" :key="comment.id">
+                    <b-list-group-item>
+                        <CommentItem :is-new="false" :comment="comment"></CommentItem>
+                    </b-list-group-item>
+            </div>
+            <div v-if="loggedIn">
                 <b-list-group-item>
-                    <CommentItem :comment="comment"></CommentItem>
+                    <CommentItem :image_id="image_id" :is-new="true"></CommentItem>
                 </b-list-group-item>
+            </div>
         </b-list-group>
     </div>
 </template>
@@ -17,7 +24,7 @@ export default {
         CommentItem,
     },
     props: {
-        image_id: Object,
+        image_id: Number,
     },
     mounted: function () {
         this.$store.dispatch('comments/load_comments_for_image', this.image_id);

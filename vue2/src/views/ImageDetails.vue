@@ -11,12 +11,10 @@
                 </b-col>
             </b-row>
             <b-row>
-                <CommentList :image_id="image.id"/>
+                <h3>Comments</h3>
             </b-row>
-            <b-row v-if="loggedIn">
-                <b-button-toolbar>
-                    <b-button id="add-button" variant="primary" size="small" @click="addComment">Add Comment</b-button>
-                </b-button-toolbar>
+            <b-row>
+                <CommentList :image_id="image.id"/>
             </b-row>
         </b-container>
     </div>

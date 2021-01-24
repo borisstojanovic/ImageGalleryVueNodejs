@@ -19,23 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d95d3d25-fcb1-4a62-8986-8b3fab1e76fa" name="Default Changelist" comment="Dodao tabelu komentara u node">
-      <change afterPath="$PROJECT_DIR$/vue2/src/components/CommentItem.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/components/CommentList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/components/EditComment.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/services/comments.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/store/comments.module.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/views/Comment.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/views/EditComment.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/views/ImageDetails.vue" afterDir="false" />
+    <list default="true" id="d95d3d25-fcb1-4a62-8986-8b3fab1e76fa" name="Default Changelist" comment="Napravio prikaz komentara">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node/routes/comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/routes/comments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue2/src/components/ImageCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/components/ImageCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue2/src/components/ImageList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/components/ImageList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue2/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue2/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue2/src/views/Image.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/views/Image.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue2/src/views/NewImage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/views/NewImage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/components/CommentItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/components/CommentItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/components/CommentList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/components/CommentList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/components/EditComment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/components/EditComment.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/services/comments.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/services/comments.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/store/comments.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/store/comments.module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/views/ImageDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/views/ImageDetails.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1611399836600</updated>
       <workItem from="1611399837697" duration="49146000" />
-      <workItem from="1611485622558" duration="11001000" />
+      <workItem from="1611485622558" duration="18709000" />
     </task>
     <task id="LOCAL-00001" summary="created session storage, login, register">
       <created>1611420967131</created>
@@ -145,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611489090447</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Napravio prikaz komentara">
+      <created>1611497200567</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1611497200567</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,7 +167,8 @@
     <MESSAGE value="Session cookies, all images listed" />
     <MESSAGE value="Napravio dodavanje slika, prikaz svih slika za korisnika" />
     <MESSAGE value="Dodao tabelu komentara u node" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodao tabelu komentara u node" />
+    <MESSAGE value="Napravio prikaz komentara" />
+    <option name="LAST_COMMIT_MESSAGE" value="Napravio prikaz komentara" />
   </component>
   <component name="WindowStateProjectService">
     <state x="192" y="253" key="#SQL_Dialects" timestamp="1611487268563">
@@ -199,10 +199,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611450741178" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1611450718690">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1611497203532">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1611450718690" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1611497203532" />
     <state x="462" y="146" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1611421018821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -211,5 +211,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1611424517508" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1611503642889">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1611503642889" />
   </component>
 </project>
