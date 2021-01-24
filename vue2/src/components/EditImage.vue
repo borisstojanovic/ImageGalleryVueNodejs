@@ -63,7 +63,8 @@ export default {
             newImage: null,
             url: '',
             isDisable: false,
-            isLoading: false
+            isLoading: false,
+            isSuccessful: false,
         }
     },
     watch: {
@@ -89,14 +90,30 @@ export default {
         this.url = this.image;
     },
     methods: {
-        add_image(image){
-            this.$store.dispatch('images/add_image', image);
+        async add_image(image){
+            await this.$store.dispatch('images/add_image', image).then( response => {
+                this.isSuccessful = true;
+                return response;
+            }).catch(err => {
+                console.log(err.message)
+                return err;
+            });
         },
-        update_image(image){
-            this.$store.dispatch('images/update_image', image);
+        async update_image(image){
+            await this.$store.dispatch('images/update_image', image).then( response => {
+                this.isSuccessful = true;
+                return response;
+            }).catch(err => {
+                return err;
+            });
         },
-        edit_image(payload){
-            this.$store.dispatch('images/edit_image', payload);
+        async edit_image(payload){
+            await this.$store.dispatch('images/edit_image', payload).then( response => {
+                this.isSuccessful = true;
+                return response;
+            }).catch(err=>{
+                return err;
+            });
         },
         validate(value, schema) {
             const result = schema.validate(value);
@@ -145,6 +162,9 @@ export default {
                 await this.update_image({id: this.$route.params.id, user: user, image: this.newImage, description: this.newDescription});
             this.url = null;
             this.isLoading = false;
+            if(this.isSuccessful){
+                this.$router.push('/home');
+            }
         },
         hasImage() {
             return !!this.url;

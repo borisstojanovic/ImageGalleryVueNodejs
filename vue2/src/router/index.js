@@ -7,8 +7,6 @@ import Register from '../views/Register.vue';
 import Image from '../views/Image.vue'
 import ImageDetails from '../views/ImageDetails.vue'
 import NewImage from '../views/NewImage.vue'
-import Comment from '../views/Comment'
-import EditComment from '../views/EditComment'
 
 Vue.use(VueRouter);
 
@@ -55,16 +53,6 @@ const routes = [
         name: 'imageDetails',
         component: ImageDetails
     },
-    {
-        path: '/comment/add/:id',
-        name: 'addComment',
-        component: Comment
-    },
-    {
-        path: '/comment/edit/:id',
-        name: 'editComment',
-        component: EditComment
-    }
 ]
 
 const router = new VueRouter({

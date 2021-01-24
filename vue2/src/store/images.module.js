@@ -62,31 +62,50 @@ export const images = {
                 return Promise.resolve(id);
             }).catch( err => {return Promise.reject(err);});
         },
-        add_image: async function ({ commit }, image){
-            await ImagesService.add_image(image).then(image => {
-                commit('add_image', image);
-                return Promise.resolve(image);
-            }).catch( err => {return Promise.reject(err);});
+        add_image: function ({ commit }, image){
+            return new Promise((resolve, reject) => {
+                ImagesService.add_image(image).then(image => {
+                    commit('add_image', image);
+                    resolve(image);
+                }).catch( (err) => {
+                    alert(err);
+                    reject(err);
+                });
+            })
+
         },
-        update_image: async function ({ commit }, payload){
+        update_image: function ({ commit }, payload){
             let formData = new FormData();
             formData.append('owner_id', payload.user.id);
             formData.append('description', payload.description);
             formData.append('image', payload.image);
-            await ImagesService.update_image(payload.id, formData).then(response => {
-                commit('update_image', {id: payload.id, user: response.data.user,
-                    description: response.data.description, path: response.data.path})
-            }).catch(err => alert(err));
+            return new Promise((resolve, reject) => {
+                ImagesService.update_image(payload.id, formData).then(response => {
+                    commit('update_image', {id: payload.id, user: response.data.user,
+                        description: response.data.description, path: response.data.path});
+                    resolve(response);
+                }).catch(err =>{
+                    alert(err);
+                    reject(err);
+                });
+            })
+
         },
 
-        edit_image: async function ({ commit }, payload){
+        edit_image: function ({ commit }, payload){
             let formData = new FormData();
             formData.append('owner_id', payload.user.id);
             formData.append('description', payload.description);
-            await ImagesService.edit_image(payload.id, formData).then(response => {
-                commit('edit_image', {id: payload.id, user: response.data.user,
-                    description: response.data.description})
-            }).catch(err => alert(err));
+            return new Promise((resolve, reject) => {
+                ImagesService.edit_image(payload.id, formData).then(response => {
+                    commit('edit_image', {id: payload.id, user: response.data.user,
+                        description: response.data.description});
+                    resolve(response);
+                }).catch(err => {
+                    alert(err);
+                    reject(err);
+                });
+            })
         },
 
         clear_images: function ({ commit }){
