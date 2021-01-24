@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d95d3d25-fcb1-4a62-8986-8b3fab1e76fa" name="Default Changelist" comment="created session storage, login, register">
+      <change afterPath="$PROJECT_DIR$/vue2/src/components/EditImage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue2/src/components/Header.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue2/src/components/ImageCard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue2/src/components/ImageList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue2/src/components/ShowImage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue2/src/services/auth.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue2/src/services/images.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue2/src/store/auth.module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue2/src/store/images.module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue2/src/views/Image.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue2/src/views/Login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue2/src/views/NewImage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue2/src/views/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/middleware/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/middleware/passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/routes/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/routes/images.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/routes/images.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1nT2c6kvtjd3apuAXZHpnNPqOYS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.15.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.22" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue2/src/views" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Boris Stojanovic.DESKTOP-RJ3J14U\WebstormProjects\ImageGalleryVueNodejs\vue2\src\views" />
+      <recent name="C:\Users\Boris Stojanovic.DESKTOP-RJ3J14U\WebstormProjects\ImageGalleryVueNodejs\vue2\src\components" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.auth.js">
+    <configuration name="app.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/node/app.js" working-dir="$PROJECT_DIR$/node">
+      <method v="2" />
+    </configuration>
+    <configuration name="auth.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/node/routes/auth.js" working-dir="$PROJECT_DIR$/node/routes">
+      <method v="2" />
+    </configuration>
+    <configuration name="images.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/node/routes/images.js" working-dir="$PROJECT_DIR$/node/routes">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.auth.js" />
+        <item itemvalue="Node.js.app.js" />
+        <item itemvalue="Node.js.images.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d95d3d25-fcb1-4a62-8986-8b3fab1e76fa" name="Default Changelist" comment="" />
+      <created>1611399836600</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611399836600</updated>
+      <workItem from="1611399837697" duration="44965000" />
+    </task>
+    <task id="LOCAL-00001" summary="created session storage, login, register">
+      <created>1611420967131</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611420967131</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="created session storage, login, register" />
+    <option name="LAST_COMMIT_MESSAGE" value="created session storage, login, register" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="192" y="253" key="#SQL_Dialects" timestamp="1611417847534">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="192" y="253" key="#SQL_Dialects/0.0.1536.824@0.0.1536.824" timestamp="1611417847534" />
+    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611415029666">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1611415029666" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1611407515382">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1611407515382" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1611425833972">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611425833972" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1611425833971">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611425833971" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1611425833971">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611425833971" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1611425833971">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611425833971" />
+    <state x="462" y="146" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1611421018821">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="462" y="146" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1536.824@0.0.1536.824" timestamp="1611421018821" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1611424517508">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1611424517508" />
+  </component>
+</project>
