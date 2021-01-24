@@ -1,6 +1,5 @@
 <template>
     <div class="home">
-        <Header/>
         <b-container>
             <b-row>
                 <b-col cm="6" >
@@ -13,12 +12,10 @@
 
 <script>
 import EditImage from "../components/EditImage";
-import Header from "../components/Header";
 
 export default {
     name: "NewImage",
     components: {
-        Header,
         EditImage
     },
     computed: {

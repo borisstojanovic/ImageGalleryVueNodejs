@@ -24,6 +24,8 @@
                           :disabled="isDisabled" size="small" @click="editImage">Edit</b-button>
                 <b-button id="delete-button" variant="danger" :hidden="isDisabled"
                           :disabled="isDisabled" size="small" @click="deleteImage">Delete</b-button>
+                <b-button id="details-button" variant="primary" :hidden="isNotShowing"
+                          :disabled="isNotShowing" size="small" @click="detailsImage">Details</b-button>
                 <b-button class="invisible" size="small" :disabled="true">SPACE</b-button>
             </b-button-toolbar>
         </template>
@@ -39,6 +41,7 @@ export default {
         return {
             url: '',
             isDisabled: true,
+            isNotShowing: true,
             isModal: false
         }
     },
@@ -51,12 +54,18 @@ export default {
     computed: {
         currentUser() {
             return this.$store.state.auth.user;
+        },
+        loggedIn() {
+            return this.$store.state.auth.status.loggedIn;
         }
     },
     methods: {
         setDisabled(){
-            if(this.image.user.id === this.currentUser.id) {
-                this.isDisabled = !this.isDisabled;
+            this.isNotShowing = !this.isNotShowing;
+            if(this.loggedIn) {
+                if (this.image.user.id === this.currentUser.id) {
+                    this.isDisabled = !this.isDisabled;
+                }
             }
         },
         editImage: function (){
@@ -64,6 +73,9 @@ export default {
         },
         deleteImage: function (){
             this.$store.dispatch('images/delete_image', this.image.id);
+        },
+        detailsImage: function (){
+            router.push({path: `/image/details/${this.image.id}`});
         },
         modalImage(){
             this.isModal = !this.isModal;

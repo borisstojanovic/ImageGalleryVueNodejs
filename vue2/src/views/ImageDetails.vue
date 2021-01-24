@@ -3,10 +3,7 @@
         <b-container>
             <b-row>
                 <b-col cm="6" >
-                    <div v-if="edit">
-                        <EditImage :user="image.user" :description="image.description" :image="image.path"/>
-                    </div>
-                    <div v-else>
+                    <div>
                         <b-container fluid="true">
                             <ShowImage v-if="images.length" :image="image"/>
                         </b-container>
@@ -14,28 +11,28 @@
                 </b-col>
             </b-row>
             <b-row>
-                <b-col cm="2" style="margin-top: 10px">
-                    <b-button variant="primary" size="lg" @click="toggleEdit" v-html="edit ? 'Cancel' : 'Edit'"/>
-                </b-col>
+                <CommentList :image_id="image.id"/>
+            </b-row>
+            <b-row v-if="loggedIn">
+                <b-button-toolbar>
+                    <b-button id="add-button" variant="primary" size="small" @click="addComment">Add Comment</b-button>
+                </b-button-toolbar>
             </b-row>
         </b-container>
     </div>
+
 </template>
 
 <script>
-import EditImage from "../components/EditImage";
 import ShowImage from "../components/ShowImage";
+import CommentList from "../components/CommentList";
+import router from "../router";
 
 export default {
-    name: "Image",
+    name: "ImageDetails",
     components: {
-        EditImage,
         ShowImage,
-    },
-    data() {
-        return {
-            edit: false
-        }
+        CommentList,
     },
     computed: {
         images() {
@@ -53,15 +50,10 @@ export default {
             return null;
         }
     },
-    created() {
-        if (!this.loggedIn) {
-            this.$router.push('/login');
-        }
-    },
     methods: {
-        toggleEdit: function () {
-            this.edit = !this.edit
-        }
+        addComment: function (){
+            router.push({path: `/comment/add/${this.image.id}`});
+        },
     }
 }
 </script>

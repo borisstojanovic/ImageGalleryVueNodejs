@@ -21,7 +21,6 @@ export default {
             return this.$store.state.images.images;
         },
         formattedImages() {
-            console.log(this.images)
             return this.images.reduce((c, n, i) => {
                 if (i % 3 === 0) c.push([]);
                 c[c.length - 1].push(n);

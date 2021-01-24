@@ -134,13 +134,23 @@ route.post('/comment', authMiddleware, (req, res) => {
 });
 
 route.delete('/comment/:id', authMiddleware, (req, res) => {
-    let query = 'delete from comment where id=?';
+    let query = 'select * from comment where id=?';
+    let formatted = mysql.format(query, [req.params.id]);
+    let comment = null;
+    pool.query(formatted, (err, rows) => {
+        if(err){
+            return res.status(500).send(err.sqlMessage);
+        }else{
+            comment = rows[0];
+        }
+    });
+    query = 'delete from comment where id=?';
     let formated = mysql.format(query, [req.params.id]);
     pool.query(formated, (err, rows) => {
         if (err)
             res.status(500).send(err.sqlMessage);
         else {
-            res.status(200).send(rows[0]);
+            res.status(200).send(comment);
         }
     });
 });
