@@ -1,5 +1,6 @@
 const express = require('express');
 const images = require('./routes/images');
+const comments = require('./routes/comments');
 const auth = require('./routes/auth');
 const history = require('connect-history-api-fallback');
 const path = require('path');
@@ -49,6 +50,7 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 app.use('/api', images);
+app.use('/comments', comments)
 app.use('/auth', auth);
 app.use(staticMiddleware);
 app.use(history());

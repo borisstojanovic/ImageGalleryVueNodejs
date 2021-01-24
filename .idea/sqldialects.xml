@@ -3,6 +3,7 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/node/middleware/passport.js" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/node/routes/auth.js" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/node/routes/comments.js" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/node/routes/images.js" dialect="MySQL" />
   </component>
 </project>
