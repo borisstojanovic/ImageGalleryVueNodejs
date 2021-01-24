@@ -3,6 +3,7 @@ const Joi = require('joi');
 const { mysql } = require('../utils/database');
 const fs = require('fs');
 const { cloudinary } = require('../utils/cloudinary');
+const { authMiddleware } = require('../middleware/auth')
 
 //multer setup
 const uploads = require('./uploads');
@@ -14,8 +15,8 @@ const { pool } = require('../utils/database');
 const route = express.Router();
 
 const scheme = Joi.object().keys({
-    user: Joi.string().trim().min(3).max(12).required(),
-    description: Joi.string().max(128).required()
+    owner_id: Joi.number().required(),
+    description: Joi.string().max(128).required(),
 });
 
 const removefile = function(path){
@@ -26,20 +27,39 @@ const removefile = function(path){
     })
 }
 
-route.get('/images',  (req, res) => {
-    pool.query('select * from images', (err, rows) => {
+function getUser(id) {
+    let query = 'select * from user where id=?'
+    let formatted = mysql.format(query, id)
+    return new Promise((resolve, reject) => {
+        pool.query(formatted, (err, response) => {
+            if(err){
+                reject(err)
+            }else{
+                resolve(response[0])
+            }
+        })
+    })
+}
+
+route.get('/images',   (req, res) => {
+     pool.query('select * from images', async (err, rows) => {
         if (err)
             res.status(500).send(err.sqlMessage);
         else {
-            for (var i = 0; i < rows.length; i++) {
-                rows[i].path = cloudinary.url(rows[i].path);
+            for (const row of rows) {
+                row.path = cloudinary.url(row.path);
+                await getUser(row.owner_id).then( response => {
+                    row.user = response;
+                }).catch( err => {
+                    return res.status(400).send(err.message)
+                });
             }
             res.send(rows);
         }
     });
 });
 
-route.post('/images', images.single('image'), async (req, res) => {
+route.post('/images', images.single('image'), authMiddleware, async (req, res) => {
 
     if(req.file === undefined){
         res.status(400).send(new Error('Please submit a file').message);
@@ -59,7 +79,7 @@ route.post('/images', images.single('image'), async (req, res) => {
             })
             removefile(path); //posto je snimljen na cdn brisem ga iz fs-a
             path = uploadedResponse.public_id; //postavljam path na URL koji vraca upload
-            let formatted = mysql.format(query, [req.body.user, req.body.description, path]);
+            let formatted = mysql.format(query, [req.body.owner_id, req.body.description, path]);
 
             pool.query(formatted, (err, response) => {
                 if (err)
@@ -81,7 +101,7 @@ route.post('/images', images.single('image'), async (req, res) => {
     }
 });
 
-route.get('/image/:id', (req, res) => {
+route.get('/image/:id', authMiddleware, (req, res) => {
     let query = 'select * from images where id=?';
     let formated = mysql.format(query, [req.params.id]);
 
@@ -98,7 +118,7 @@ route.get('/image/:id', (req, res) => {
 });
 
 //sluzi samo da se promene username i description
-route.put('/edit/:id', images.none(), (req, res) => {
+route.put('/edit/:id', authMiddleware, images.none(), (req, res) => {
 
     if(req.body === undefined){
         res.status(400).send(new Error('Body empty error').sqlMessage);
@@ -146,7 +166,7 @@ const uploadToCloudinary = function(image) {
     });
 }
 
-route.put('/image/:id', images.single('image'), async (req, res) => {
+route.put('/image/:id', authMiddleware, images.single('image'), async (req, res) => {
 
     if(req.file === undefined){
         res.status(400).send(new Error('Please submit a file').sqlMessage);
@@ -212,7 +232,7 @@ route.put('/image/:id', images.single('image'), async (req, res) => {
     }
 });
 
-route.delete('/image/:id', (req, res) => {
+route.delete('/image/:id', authMiddleware, (req, res) => {
     let query = 'select * from images where id=?';
     let formated = mysql.format(query, [req.params.id]);
     pool.query(formated, (err, rows) => {

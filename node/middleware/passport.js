@@ -23,6 +23,10 @@ passport.use(new LocalStrategy(
                 if(response === true){
                     return done(null, {user_id: id})
                 }
+                if(err){
+                    return done(err, false)
+                }
+                return  done(new Error('Wrong Password'), false)
             })
 
         });

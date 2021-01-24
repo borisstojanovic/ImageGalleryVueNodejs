@@ -27,18 +27,28 @@ route.post("/signin", bodyParser.json(), (req, res, next) => {
     }
     passport.authenticate("local", (err, user, info) => {
         if (err) {
-            return next(err);
+            return res.status(400).send(err.message);
         }
 
         if (!user) {
             return res.status(400).send([user, "Cannot log in", info]);
         }
 
-        req.logIn(user, err => {
+        req.login(user, err => {
             if(err){
                 res.send(err)
             }
-            res.send(user);
+            let query = 'select * from user where id=?';
+            let formated = mysql.format(query, user.user_id);
+
+            pool.query(formated, (err, rows) => {
+                if (err) {
+                    res.status(500).send(err.sqlMessage);
+                }
+                else {
+                    return res.send(rows[0]);
+                }
+            });
         });
     })(req, res, next);
 });
