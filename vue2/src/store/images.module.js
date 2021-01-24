@@ -46,7 +46,12 @@ export const images = {
     actions: {
         load_images: function ({ commit }){
             ImagesService.load_images().then(images => {
-                console.log(images)
+                commit('set_images', images);
+                return Promise.resolve(images);
+            }).catch( err => {return Promise.reject(err);});
+        },
+        load_images_for_user: function ({ commit }, user){
+            ImagesService.load_images_for_user(user).then(images => {
                 commit('set_images', images);
                 return Promise.resolve(images);
             }).catch( err => {return Promise.reject(err);});

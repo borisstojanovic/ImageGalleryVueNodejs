@@ -1,8 +1,8 @@
 <template>
     <b-card v-b-hover="setDisabled" border-variant="dark" header="Dark" align="center" style="max-width: 20rem;"  img-top>
-        <b-modal :visible="isModal" id="image-modal" hide-footer>
+        <b-modal class="modal-fade" :visible="isModal" id="image-modal" hide-footer>
             <template #modal-title>
-                User: {{image.user}}
+                User: {{image.user.username}}
             </template>
             <div class="d-block text-center">
                 <b-img fluid :src="url"></b-img>

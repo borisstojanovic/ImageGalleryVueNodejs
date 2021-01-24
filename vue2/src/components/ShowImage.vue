@@ -3,7 +3,7 @@
     <b-card border-variant="dark" header="Dark" align="center" style="max-width: 40rem;"  img-top>
         <b-modal :visible="isModal" id="image-modal" hide-footer>
             <template #modal-title>
-                User: {{image.user}}
+                User: {{image.user.username}}
             </template>
             <div class="d-block text-center">
                 <b-img fluid :src="url"></b-img>
@@ -17,7 +17,7 @@
         <b-list-group>
             <b-list-group-item v-text="image.description"></b-list-group-item>
             <b-list-group-item v-text="'Date added: ' + image.time"></b-list-group-item>
-            <b-list-group-item v-text="'User: ' + image.user"></b-list-group-item>
+            <b-list-group-item v-text="'User: ' + image.user.username"></b-list-group-item>
         </b-list-group>
     </b-card>
     </b-container>

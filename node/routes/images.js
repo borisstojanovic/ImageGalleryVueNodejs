@@ -59,6 +59,26 @@ route.get('/images',   (req, res) => {
     });
 });
 
+route.get('/images/:id', authMiddleware,   (req, res) => {
+    let query = 'select * from images where owner_id=?';
+    let formatted = mysql.format(query, [req.params.id]);
+    pool.query(formatted, async (err, rows) => {
+        if (err)
+            res.status(500).send(err.sqlMessage);
+        else {
+            for (const row of rows) {
+                row.path = cloudinary.url(row.path);
+                await getUser(row.owner_id).then( response => {
+                    row.user = response;
+                }).catch( err => {
+                    return res.status(400).send(err.message)
+                });
+            }
+            res.send(rows);
+        }
+    });
+});
+
 route.post('/images', images.single('image'), authMiddleware, async (req, res) => {
 
     if(req.file === undefined){
@@ -87,11 +107,16 @@ route.post('/images', images.single('image'), authMiddleware, async (req, res) =
                 else {
                     query = 'select * from images where id=?';
                     formatted = mysql.format(query, [response.insertId]);
-                    pool.query(formatted, (err, rows) => {
+                    pool.query(formatted, async (err, rows) => {
                         if (err)
                             res.status(500).send(err.sqlMessage);
                         else {
                             rows[0].path = cloudinary.url(rows[0].path);
+                            await getUser(rows[0].owner_id).then( response => {
+                                rows[0].user = response;
+                            }).catch( err => {
+                                return res.status(400).send(err.message)
+                            });
                             res.send(rows[0]);
                         }
                     });
@@ -105,13 +130,18 @@ route.get('/image/:id', authMiddleware, (req, res) => {
     let query = 'select * from images where id=?';
     let formated = mysql.format(query, [req.params.id]);
 
-    pool.query(formated, (err, rows) => {
+    pool.query(formated, async (err, rows) => {
         if (err)
             res.status(500).send(err.sqlMessage);
         else {
             if(rows[0] !== undefined) {
                 rows[0].path = cloudinary.url(rows[0].path);
             }
+            await getUser(rows[0].owner_id).then( response => {
+                rows[0].user = response;
+            }).catch( err => {
+                return res.status(400).send(err.message)
+            });
             res.send(rows[0]);
         }
     });
@@ -130,7 +160,7 @@ route.put('/edit/:id', authMiddleware, images.none(), (req, res) => {
             res.status(400).send(error.details[0].message);
         else {
             let query = "update images set owner_id=?, description=? where id=?";
-            let formated = mysql.format(query, [req.body.user, req.body.description, req.params.id]);
+            let formated = mysql.format(query, [req.body.owner_id, req.body.description, req.params.id]);
 
             pool.query(formated, (err, response) => {
                 if (err)
@@ -139,7 +169,7 @@ route.put('/edit/:id', authMiddleware, images.none(), (req, res) => {
                     query = 'select * from images where id=?';
                     formated = mysql.format(query, [req.params.id]);
 
-                    pool.query(formated, (err, rows) => {
+                    pool.query(formated, async (err, rows) => {
                         if (err)
                             res.status(500).send(err.sqlMessage);
                         else {
@@ -147,6 +177,11 @@ route.put('/edit/:id', authMiddleware, images.none(), (req, res) => {
                                 res.status(400).send(new Error('Image doesn\'t exist').sqlMessage);
                             else {
                                 rows[0].path = cloudinary.url(rows[0].path);
+                                await getUser(rows[0].owner_id).then( response => {
+                                    rows[0].user = response;
+                                }).catch( err => {
+                                    return res.status(400).send(err.message)
+                                });
                                 res.send(rows[0]);
                             }
                         }
@@ -202,7 +237,7 @@ route.put('/image/:id', authMiddleware, images.single('image'), async (req, res)
             path = uploadedResponse.public_id;
             removefile(req.file.path);
             let query = "update images set owner_id=?, description=?, path=? where id=?";
-            let formated = mysql.format(query, [req.body.user, req.body.description, path, req.params.id]);
+            let formated = mysql.format(query, [req.body.owner_id, req.body.description, path, req.params.id]);
 
             pool.query(formated, (err, response) => {
                 if (err) {
@@ -222,6 +257,11 @@ route.put('/image/:id', authMiddleware, images.single('image'), async (req, res)
                                 res.status(400).send(new Error('Image doesn\'t exist').sqlMessage);
                             }else {
                                 rows[0].path = cloudinary.url(rows[0].path);
+                                await getUser(rows[0].owner_id).then( response => {
+                                    rows[0].user = response;
+                                }).catch( err => {
+                                    return res.status(400).send(err.message)
+                                });
                                 res.send(rows[0]);
                             }
                         }

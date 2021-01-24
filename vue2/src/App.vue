@@ -9,10 +9,7 @@
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link v-if="currentUser" to="/listImages" class="nav-link">List Images</router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link v-if="currentUser" to="/listAll" class="nav-link">Gallery</router-link>
+                    <router-link v-if="currentUser" to="/edit" class="nav-link">Add Image</router-link>
                 </li>
                 <li class="nav-item">
                     <router-link v-if="currentUser" to="/user" class="nav-link">User</router-link>

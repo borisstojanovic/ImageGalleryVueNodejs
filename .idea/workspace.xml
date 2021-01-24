@@ -19,26 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d95d3d25-fcb1-4a62-8986-8b3fab1e76fa" name="Default Changelist" comment="created session storage, login, register">
-      <change afterPath="$PROJECT_DIR$/vue2/src/components/EditImage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/components/Header.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/components/ImageCard.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/components/ImageList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/components/ShowImage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/services/auth.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/services/images.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/store/auth.module.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/store/images.module.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/views/Image.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/views/Login.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/views/NewImage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue2/src/views/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/middleware/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/middleware/passport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/routes/auth.js" afterDir="false" />
+    <list default="true" id="d95d3d25-fcb1-4a62-8986-8b3fab1e76fa" name="Default Changelist" comment="Session cookies, all images listed">
+      <change afterPath="$PROJECT_DIR$/vue2/src/views/User.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node/routes/images.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/routes/images.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/components/EditImage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/components/EditImage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/components/ImageCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/components/ImageCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/components/ShowImage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/components/ShowImage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/services/images.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/services/images.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/store/images.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/store/images.module.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -110,7 +102,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611399836600</updated>
-      <workItem from="1611399837697" duration="44965000" />
+      <workItem from="1611399837697" duration="49042000" />
     </task>
     <task id="LOCAL-00001" summary="created session storage, login, register">
       <created>1611420967131</created>
@@ -119,7 +111,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611420967131</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Session cookies, all images listed">
+      <created>1611446569107</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1611446569107</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Session cookies, all images listed">
+      <created>1611446579720</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1611446579720</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +144,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created session storage, login, register" />
-    <option name="LAST_COMMIT_MESSAGE" value="created session storage, login, register" />
+    <MESSAGE value="Session cookies, all images listed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Session cookies, all images listed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="192" y="253" key="#SQL_Dialects" timestamp="1611417847534">
@@ -169,6 +176,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611425833971" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1611446583675">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1611446583675" />
     <state x="462" y="146" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1611421018821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

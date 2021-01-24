@@ -11,7 +11,7 @@ export default {
     computed:{
         images() {
             return this.$store.state.images.images;
-        }
+        },
     },
 }
 </script>

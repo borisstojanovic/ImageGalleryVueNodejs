@@ -13,6 +13,16 @@ class ImagesService {
             });
     }
 
+    load_images_for_user(user) {
+        console.log(user)
+        return axios.get(API_URL + 'images/' + user, {withCredentials: true})
+            .then(response => {
+                return response.data;
+            }).catch(err => {
+                return err;
+            });
+    }
+
     delete_image(id) {
         return axios.delete(API_URL + 'image/' + id, {withCredentials: true}).then( response => {
             return response.data.id;
@@ -22,7 +32,7 @@ class ImagesService {
     }
 
     add_image(image){
-        return axios.post(API_URL + 'images', {image: image}, {withCredentials: true}).then(response => {
+        return axios.post(API_URL + 'images', image, {withCredentials: true}).then(response => {
             return response.data;
         }).catch(err => {
             return err;

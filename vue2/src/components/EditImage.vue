@@ -2,9 +2,6 @@
     <b-container fluid="true">
         <b-form>
             <b-row class="mt-2">
-                <b-col sm="2" offset="2">
-                    <b-input v-model="newUser" class="mb-2 mr-sm-2 mb-sm-0" placeholder="Username"></b-input>
-                </b-col>
                 <b-col sm="5">
                     <b-form-textarea v-model="newDescription" placeholder="Description"></b-form-textarea>
                 </b-col>
@@ -29,11 +26,9 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
 import Joi from 'joi';
 
 const scheme = Joi.object().keys({
-    user: Joi.string().trim().min(3).max(12).required(),
     description: Joi.string().max(128).required()
 });
 
@@ -48,10 +43,6 @@ const base64Encode = data =>
 export default {
     name: "EditImage",
     props: {
-        user: {
-            type: String,
-            default: ''
-        },
         description: {
             type: String,
             default: ''
@@ -61,9 +52,13 @@ export default {
             default: null
         }
     },
+    computed: {
+        currentUser() {
+            return this.$store.state.auth.user;
+        }
+    },
     data() {
         return {
-            newUser: '',
             newDescription: '',
             newImage: null,
             url: '',
@@ -89,14 +84,20 @@ export default {
         }
     },
     mounted: function () {
-        this.newUser = this.user;
         this.newDescription = this.description;
         this.newImage = null;
         this.url = this.image;
     },
     methods: {
-        ...mapActions(['add_image', 'update_image', 'edit_image']),
-
+        add_image(image){
+            this.$store.dispatch('images/add_image', image);
+        },
+        update_image(image){
+            this.$store.dispatch('images/update_image', image);
+        },
+        edit_image(payload){
+            this.$store.dispatch('images/edit_image', payload);
+        },
         validate(value, schema) {
             const result = schema.validate(value);
             if (result.error) {
@@ -106,7 +107,8 @@ export default {
             return true;
         },
         addNew: async function() {
-            if(!this.validate({user: this.newUser, description: this.newDescription}, scheme)){
+            let user = this.currentUser;
+            if(!this.validate({description: this.newDescription}, scheme)){
                 return;
             }
             if(this.newImage === null && this.image === null){
@@ -114,7 +116,6 @@ export default {
                 return;
             }
             if(this.newImage !== null){
-                console.log(this.newImage)
                 if(this.newImage.type !== 'image/gif' && this.newImage.type !== 'image/jpg' &&
                     this.newImage.type !== 'image/png' && this.newImage.type !== 'image/jpeg') {
                     this.newImage = null;
@@ -128,7 +129,7 @@ export default {
 
             }
             const img = new FormData();
-            img.append('user', this.newUser);
+            img.append('owner_id', user.id);
             img.append('description', this.newDescription);
             img.append('image', this.newImage);
             if(this.isLoading){
@@ -139,15 +140,9 @@ export default {
             if (!this.$route.params.id)
                 await this.add_image(img);
             else if(this.newImage === null)
-                await this.edit_image({id: this.$route.params.id, user: this.newUser,
-                    description: this.newDescription});
+                await this.edit_image({id: this.$route.params.id, user: user, description: this.newDescription});
             else
-                await this.update_image({id: this.$route.params.id, image: this.newImage,
-                    user: this.newUser, description: this.newDescription});
-
-            this.newUser = '';
-            this.newDescription = '';
-            this.newImage = null;
+                await this.update_image({id: this.$route.params.id, user: user, image: this.newImage, description: this.newDescription});
             this.url = null;
             this.isLoading = false;
         },
