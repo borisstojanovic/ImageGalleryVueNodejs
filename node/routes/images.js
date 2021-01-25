@@ -80,11 +80,15 @@ route.get('/images/:id', authMiddleware,   (req, res) => {
 });
 
 route.post('/images', images.single('image'), authMiddleware, async (req, res) => {
-
     if(req.file === undefined){
         res.status(400).send(new Error('Please submit a file').message);
     }else {
         let {error} = Joi.validate(req.body, scheme);
+        if(req.user.user_id !== parseInt(req.body.owner_id)){
+            console.log(req.body.owner_id)
+            removefile(req.file.path);
+            return res.status(401).send(new Error('Unauthorized edit').sqlMessage);
+        }
         if (error) {
             removefile(req.file.path);
             res.status(400).send(error.details[0].message);
@@ -155,7 +159,10 @@ route.put('/edit/:id', authMiddleware, images.none(), (req, res) => {
     } else {
 
         let {error} = Joi.validate(req.body, scheme);
-
+        if(req.user.user_id !== req.body.owner_id){
+            removefile(req.file.path);
+            return res.status(401).send(new Error('Unauthorized edit').sqlMessage);
+        }
         if (error)
             res.status(400).send(error.details[0].message);
         else {
@@ -207,7 +214,10 @@ route.put('/image/:id', authMiddleware, images.single('image'), async (req, res)
         res.status(400).send(new Error('Please submit a file').sqlMessage);
     }else {
         let {error} = Joi.validate(req.body, scheme);
-
+        if(req.user.user_id !== req.body.owner_id){
+            removefile(req.file.path);
+            return res.status(401).send(new Error('Unauthorized edit').sqlMessage);
+        }
         if (error) {
             removefile(req.file.path);
             res.status(400).send(error.details[0].message);
