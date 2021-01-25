@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d95d3d25-fcb1-4a62-8986-8b3fab1e76fa" name="Default Changelist" comment="Napravio dodavanje, brisanje i editovanje komentara">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/routes/comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/routes/comments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/routes/images.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/routes/images.js" afterDir="false" />
-    </list>
+    <list default="true" id="d95d3d25-fcb1-4a62-8986-8b3fab1e76fa" name="Default Changelist" comment="popravio proveru id-jeva prilikom dodavanja i editovanja komentara" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +93,7 @@
       <workItem from="1611399837697" duration="49146000" />
       <workItem from="1611485622558" duration="20111000" />
       <workItem from="1611571128281" duration="635000" />
-      <workItem from="1611580177641" duration="3391000" />
+      <workItem from="1611580177641" duration="3782000" />
     </task>
     <task id="LOCAL-00001" summary="created session storage, login, register">
       <created>1611420967131</created>
@@ -155,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611506123583</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="popravio proveru id-jeva prilikom dodavanja i editovanja komentara">
+      <created>1611583962039</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1611583962039</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +183,8 @@
     <MESSAGE value="Dodao tabelu komentara u node" />
     <MESSAGE value="Napravio prikaz komentara" />
     <MESSAGE value="Napravio dodavanje, brisanje i editovanje komentara" />
-    <option name="LAST_COMMIT_MESSAGE" value="Napravio dodavanje, brisanje i editovanje komentara" />
+    <MESSAGE value="popravio proveru id-jeva prilikom dodavanja i editovanja komentara" />
+    <option name="LAST_COMMIT_MESSAGE" value="popravio proveru id-jeva prilikom dodavanja i editovanja komentara" />
   </component>
   <component name="WindowStateProjectService">
     <state x="192" y="253" key="#SQL_Dialects" timestamp="1611487268563">
