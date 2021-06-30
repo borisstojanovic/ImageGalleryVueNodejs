@@ -14,7 +14,6 @@ class ImagesService {
     }
 
     load_images_for_user(user) {
-        console.log(user)
         return axios.get(API_URL + 'images/' + user, {withCredentials: true})
             .then(response => {
                 return response.data;

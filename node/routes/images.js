@@ -153,14 +153,11 @@ route.get('/image/:id', authMiddleware, (req, res) => {
 
 //sluzi samo da se promene username i description
 route.put('/edit/:id', authMiddleware, images.none(), (req, res) => {
-
     if(req.body === undefined){
         res.status(400).send(new Error('Body empty error').sqlMessage);
     } else {
-
         let {error} = Joi.validate(req.body, scheme);
-        if(req.user.user_id !== req.body.owner_id){
-            removefile(req.file.path);
+        if(req.user.user_id !== parseInt(req.body.owner_id)){
             return res.status(401).send(new Error('Unauthorized edit').sqlMessage);
         }
         if (error)
@@ -209,12 +206,11 @@ const uploadToCloudinary = function(image) {
 }
 
 route.put('/image/:id', authMiddleware, images.single('image'), async (req, res) => {
-
     if(req.file === undefined){
         res.status(400).send(new Error('Please submit a file').sqlMessage);
     }else {
         let {error} = Joi.validate(req.body, scheme);
-        if(req.user.user_id !== req.body.owner_id){
+        if(req.user.user_id !== parseInt(req.body.owner_id)){
             removefile(req.file.path);
             return res.status(401).send(new Error('Unauthorized edit').sqlMessage);
         }

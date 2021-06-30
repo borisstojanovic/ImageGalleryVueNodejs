@@ -19,7 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d95d3d25-fcb1-4a62-8986-8b3fab1e76fa" name="Default Changelist" comment="popravio proveru id-jeva prilikom dodavanja i editovanja komentara" />
+    <list default="true" id="d95d3d25-fcb1-4a62-8986-8b3fab1e76fa" name="Default Changelist" comment="popravio proveru id-jeva prilikom dodavanja i editovanja komentara">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/routes/images.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/routes/images.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/components/EditImage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/components/EditImage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/services/images.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/services/images.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue2/src/store/images.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue2/src/store/images.module.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +70,7 @@
       <recent name="C:\Users\Boris Stojanovic.DESKTOP-RJ3J14U\WebstormProjects\ImageGalleryVueNodejs\vue2\src\components" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.auth.js">
+  <component name="RunManager" selected="Node.js.app.js">
     <configuration name="app.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/node/app.js" working-dir="$PROJECT_DIR$/node">
       <method v="2" />
     </configuration>
@@ -93,7 +99,19 @@
       <workItem from="1611399837697" duration="49146000" />
       <workItem from="1611485622558" duration="20111000" />
       <workItem from="1611571128281" duration="635000" />
-      <workItem from="1611580177641" duration="3782000" />
+      <workItem from="1611580177641" duration="5361000" />
+      <workItem from="1611912187436" duration="1877000" />
+      <workItem from="1612456108674" duration="15000" />
+      <workItem from="1615831892002" duration="35000" />
+      <workItem from="1615924201974" duration="3000" />
+      <workItem from="1617826266691" duration="592000" />
+      <workItem from="1622215965986" duration="1458000" />
+      <workItem from="1622270268541" duration="71000" />
+      <workItem from="1622270990868" duration="1222000" />
+      <workItem from="1622366699370" duration="594000" />
+      <workItem from="1622406227341" duration="300000" />
+      <workItem from="1625056826208" duration="1856000" />
+      <workItem from="1625058745217" duration="1845000" />
     </task>
     <task id="LOCAL-00001" summary="created session storage, login, register">
       <created>1611420967131</created>
@@ -158,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611583962039</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="popravio proveru id-jeva prilikom dodavanja i editovanja komentara">
+      <created>1611584295637</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1611584295637</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,10 +240,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611450741178" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1611506132359">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1611584301308">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1611506132359" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1611584301308" />
     <state x="462" y="146" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1611421018821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

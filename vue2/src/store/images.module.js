@@ -75,12 +75,8 @@ export const images = {
 
         },
         update_image: function ({ commit }, payload){
-            let formData = new FormData();
-            formData.append('owner_id', payload.user.id);
-            formData.append('description', payload.description);
-            formData.append('image', payload.image);
             return new Promise((resolve, reject) => {
-                ImagesService.update_image(payload.id, formData).then(response => {
+                ImagesService.update_image(payload.id, payload.img).then(response => {
                     commit('update_image', {id: payload.id, user: response.data.user,
                         description: response.data.description, path: response.data.path});
                     resolve(response);
@@ -93,11 +89,8 @@ export const images = {
         },
 
         edit_image: function ({ commit }, payload){
-            let formData = new FormData();
-            formData.append('owner_id', payload.user.id);
-            formData.append('description', payload.description);
             return new Promise((resolve, reject) => {
-                ImagesService.edit_image(payload.id, formData).then(response => {
+                ImagesService.edit_image(payload.id, payload.img).then(response => {
                     commit('edit_image', {id: payload.id, user: response.data.user,
                         description: response.data.description});
                     resolve(response);

@@ -148,18 +148,20 @@ export default {
             const img = new FormData();
             img.append('owner_id', user.id);
             img.append('description', this.newDescription);
-            img.append('image', this.newImage);
             if(this.isLoading){
                 alert('Please Wait For Upload To Finish And Try Again');
                 return;
             }
             this.isLoading = true;
-            if (!this.$route.params.id)
+            if (!this.$route.params.id) {
+                img.append('image', this.newImage);
                 await this.add_image(img);
-            else if(this.newImage === null)
-                await this.edit_image({id: this.$route.params.id, user: user, description: this.newDescription});
-            else
-                await this.update_image({id: this.$route.params.id, user: user, image: this.newImage, description: this.newDescription});
+            } else if(this.newImage === null) {
+                await this.edit_image({id: this.$route.params.id, img: img});
+            } else {
+                img.append('image', this.newImage);
+                await this.update_image({id: this.$route.params.id, img: img});
+            }
             this.url = null;
             this.isLoading = false;
             if(this.isSuccessful){
